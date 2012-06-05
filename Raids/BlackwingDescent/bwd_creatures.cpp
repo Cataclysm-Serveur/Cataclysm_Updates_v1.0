@@ -57,10 +57,6 @@ public:
             uiTimer = 0;
         }
 
-        void EnterCombat(Unit* /*who*/)
-        {
-		}
-
 		void UpdateAI(const uint32 uiDiff)
     	{
     		if (!me->getVictim())
@@ -121,10 +117,6 @@ public:
 			uiCoupTonnerreTimer = 10000;
             uiTimer = 0;
         }
-
-        void EnterCombat(Unit* /*who*/)
-        {
-		}
 
 		void UpdateAI(const uint32 uiDiff)
     	{
@@ -188,10 +180,6 @@ public:
 			uiFrappeLaserTimer = 15000;
             uiTimer = 0;
         }
-
-        void EnterCombat(Unit* /*who*/)
-        {
-		}
 
 		void UpdateAI(const uint32 uiDiff)
     	{
@@ -267,10 +255,6 @@ public:
             uiTimer = 0;
         }
 
-        void EnterCombat(Unit* /*who*/)
-        {
-		}
-
 		void UpdateAI(const uint32 uiDiff)
     	{
     		if (!me->getVictim())
@@ -338,10 +322,6 @@ public:
 			uiOmbreFlammeTimer = 10000;
             uiTimer = 0;
         }
-
-        void EnterCombat(Unit* /*who*/)
-        {
-		}
 
 		void UpdateAI(const uint32 uiDiff)
     	{
