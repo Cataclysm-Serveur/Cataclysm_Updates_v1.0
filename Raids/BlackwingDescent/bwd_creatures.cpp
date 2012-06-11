@@ -25,6 +25,10 @@ enum eSpells
 	SPELL_FOUETTE_QUEUE				= 80130,
 	SPELL_ETREINTE = 80145,
 
+	// Spells npc 1
+
+	// Spells npc 2
+
 };
 
 class bwd_creature_drakonid_chainewilder : public CreatureScript // Drakonid ChaineWilder
@@ -375,6 +379,90 @@ public:
 
 };
 
+// Npc 1
+class bwd_creature_1 : public CreatureScript // 1
+{
+public:
+    bwd_creature_1() : CreatureScript("bwd_creature_1") { }
+
+    CreatureAI* GetAI(Creature* creature) const
+    {
+        return new bwd_creature_1AI (creature);
+    }
+
+    struct bwd_creature_1AI : public ScriptedAI
+    {
+        bwd_creature_1AI(Creature* creature) : ScriptedAI(creature)
+        {
+            instance = creature->GetInstanceScript();
+        }
+
+        InstanceScript* instance;
+
+        uint32 uiTimer;
+
+        void Reset()
+        {
+            uiTimer = 0;
+        }
+
+		void UpdateAI(const uint32 uiDiff)
+    	{
+    		if (!me->getVictim())
+           	{
+    		}
+    		
+    		if (!UpdateVictim())
+    			return;
+
+    	DoMeleeAttackIfReady();
+    	}
+    };
+
+};
+
+// Npc 2
+class bwd_creature_2 : public CreatureScript // 2
+{
+public:
+    bwd_creature_2() : CreatureScript("bwd_creature_2") { }
+
+    CreatureAI* GetAI(Creature* creature) const
+    {
+        return new bwd_creature_2AI (creature);
+    }
+
+    struct bwd_creature_2AI : public ScriptedAI
+    {
+        bwd_creature_2AI(Creature* creature) : ScriptedAI(creature)
+        {
+            instance = creature->GetInstanceScript();
+        }
+
+        InstanceScript* instance;
+
+        uint32 uiTimer;
+
+        void Reset()
+        {
+            uiTimer = 0;
+        }
+
+		void UpdateAI(const uint32 uiDiff)
+    	{
+    		if (!me->getVictim())
+           	{
+    		}
+    		
+    		if (!UpdateVictim())
+    			return;
+
+    	DoMeleeAttackIfReady();
+    	}
+    };
+
+};
+
 void AddSC_bwd_creature_drakonid_chainewilder()
 {
 	new bwd_creature_drakonid_chainewilder();
@@ -382,4 +470,6 @@ void AddSC_bwd_creature_drakonid_chainewilder()
 	new bwd_creature_golem_sentry();
 	new bwd_creature_ivoroc();
 	new bwd_creature_maimgor();
+	new bwd_creature_1();
+	new bwd_creature_2();
 }
